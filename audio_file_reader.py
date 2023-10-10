@@ -6,7 +6,7 @@ from tkinter import Tk
 def read_audio_files_from_folder(folder_path):
     audio_data = {}
     for filename in os.listdir(folder_path):
-        if filename.endswith('.mp3') or filename.endswith('.wav'):
+        if filename.endswith('.flac'):
             file_path = os.path.join(folder_path, filename)
             audio, sr = librosa.load(file_path, sr=None)
             audio_data[filename] = {'audio': audio, 'sample_rate': sr}
